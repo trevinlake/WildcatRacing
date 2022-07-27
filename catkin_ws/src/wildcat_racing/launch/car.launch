@@ -1,0 +1,7 @@
+<launch>
+  <node name="lidar_eth" pkg="wildcat_racing" type="lidar_ethernet_setup.py" output="screen"></node>
+  <node name="urg_node" pkg="urg_node" type="urg_node" output="screen"></node>
+  <node name="teleop" pkg="wildcat_racing" type="teleop_node.py" output="screen"></node>
+  <node name="urg_to_directions" pkg="wildcat_racing" type="urg_to_directions.py" output="screen"></node>
+  <node name="vesc_node" pkg="wildcat_racing" type="vesc_node.py" output="screen"></node> 
+</launch>
