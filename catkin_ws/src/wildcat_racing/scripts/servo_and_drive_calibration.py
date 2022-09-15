@@ -12,7 +12,7 @@ kit.servo[0].set_pulse_width_range(1000, 2000)
 """
 #Use this code to set drive motor throttle; 0 is stopped,
 0.5 is half speed, 1 is full speed.
-kit.continuous_servo[1].throttle = 0
+kit.continuous_servo[2].throttle = 0
 """
 
 """
@@ -46,5 +46,5 @@ for step in STEERING_STEP_LIST:
 
 #Slowly increase throttle on drive motor within its entire range.
 for step in DRIVE_STEP_LIST:
-    kit.continuous_servo[1].throttle = step
+    kit.continuous_servo[2].throttle = step
     print(step)
