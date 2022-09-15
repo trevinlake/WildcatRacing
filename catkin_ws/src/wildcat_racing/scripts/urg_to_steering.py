@@ -9,5 +9,4 @@ from std_msgs.msg import String
 
 
 
-print("Opened urg_to_directions node")
-
+print("Opened urg_to_steering node")
