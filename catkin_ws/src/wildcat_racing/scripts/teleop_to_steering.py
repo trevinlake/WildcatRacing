@@ -22,6 +22,8 @@ def callback(Twist):
     elif angular_z < 0 and angular_z > .91 and angular_z < 2.3579:
     #use right_angle(output is in range 90-180)
         angle = 94.4285281853136*np.log(angular_z) + 99
+    else:
+        angle = 90
 
     #publish new angle
     teleop_to_steering(angle)

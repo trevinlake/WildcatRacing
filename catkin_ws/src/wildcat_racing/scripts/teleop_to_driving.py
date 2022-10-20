@@ -16,10 +16,16 @@ def teleop_to_driving(speed):
 def callback(data):
     rospy.loginfo(rospy.get_caller_id() + "I heard: %s\n", data.data)
     linear_x = Twist.linear.x
-    if linear_x < 1.1789 and linear_x > 0.4549:
+    if linear_x == 0:
+        #set speed to 0
+        speed = 0
+    elif linear_x < 1.1789 and linear_x > 0.4549:
         #Output in range(0-1)
         speed = 1.04920586872571*np.log(linear_x) + 0.827254089734171
-        teleop_to_driving(speed)
+    else:
+        speed = 0
+
+    teleop_to_driving(speed)
 
 
 def teleop_listener():
