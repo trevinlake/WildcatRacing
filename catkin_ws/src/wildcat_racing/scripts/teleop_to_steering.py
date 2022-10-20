@@ -5,33 +5,27 @@ from std_msgs.msg import Float32
 from geometry_msgs.msg import Twist
 import numpy as np
 
-pub = rospy.Publisher('/teleop_angle', Float32, queue_size=120)
-rospy.init_node('teleop_to_steering', anonymous=True)
-rate = rospy.Rate(120) # 120hz
-angle = 90 #start out straight.
 def teleop_to_steering(angle):
     while not rospy.is_shutdown():
-        #Do cmd_vel conversion Code
-        #angle =
         rospy.loginfo(angle)
         pub.publish(angle)
         rate.sleep()
 
-def callback(data):
+def callback(Twist):
     rospy.loginfo(rospy.get_caller_id() + "I heard: %s\n", data.data)
-    #if data.data == null:
-    #if linear_x != 0:
-    #use forward_angle
+    angular_z = Twist.angular.z
+    if angular_z == 0:
+        angle = 90
+    elif angular_z < 0 and angular_z > -2.3579 and angular_z < -.91:
+    #use left_angle(output is in range 0-90)
+        angle = -94.4285281853136*np.log(-1*angular_z) + 81
+    elif angular_z < 0 and angular_z > .91 and angular_z < 2.3579:
+    #use right_angle(output is in range 90-180)
+        angle = 94.4285281853136*np.log(angular_z) + 99
 
-    #if angular_z > 0:
-    #use left_angle
+    #publish new angle
+    teleop_to_steering(angle)
 
-    #if angular_z < 0:
-    #use right_angle
-    forward_angle = 1.04920586872571*np.log(linear_x) + 0.827254089734171
-    left_angle = -94.4285281853136*np.log(angular_z) + 81
-    right_angle = 94.4285281853136*np.log(angular_z) + 99
-    
 def teleop_listener():
     #already initiated teleop_to_steering node in main call.
     rospy.Subscriber('/cmd_vel', Twist, callback)
@@ -41,8 +35,13 @@ def teleop_listener():
         except rospy.ROSInterruptException:
             pass
 
+def main():
+    pub = rospy.Publisher('/teleop_angle', Float32, queue_size=120)
+    rospy.init_node('teleop_to_steering', anonymous=True)
+    rate = rospy.Rate(120) # 120hz
 
 
 if __name__ == '__main__':
     print "Running teleop_to_steering"
+    main()
     teleop_listener()
