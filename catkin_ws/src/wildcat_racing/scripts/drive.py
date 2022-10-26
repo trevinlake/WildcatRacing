@@ -7,7 +7,7 @@ import numpy as np
 
 kit = ServoKit(channels=16)
 
-class Servo:
+class Drive:
 
     # Steering Servo info:
     # The steering servo as configured above will take range 0-180
@@ -39,5 +39,5 @@ class Servo:
 if __name__ == '__main__':
     print("Running drive node.")
     rospy.init_node('drive')
-    Servo()
+    Drive()
     rospy.spin()
