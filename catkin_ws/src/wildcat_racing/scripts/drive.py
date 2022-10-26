@@ -9,9 +9,9 @@ kit = ServoKit(channels=16)
 
 class Drive:
 
-    # Steering Servo info:
-    # The steering servo as configured above will take range 0-180
-    # where 0 is RHS and 180 is LHS.
+    # Drive Servo info:
+    # The drive servo as configured above will take range 0.00 to 1.00
+    # where 0 is complete stop and 1 is full throttle.
 
     def __init__(self):
         self.speed = 0
