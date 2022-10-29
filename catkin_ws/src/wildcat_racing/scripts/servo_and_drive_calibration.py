@@ -1,5 +1,4 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
+#! /usr/bin/env python
 
 from adafruit_servokit import ServoKit
 import numpy as np

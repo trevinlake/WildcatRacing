@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#! /usr/bin/env python
 import rospy
 from std_msgs.msg import Empty
 from std_msgs.msg import Float32
@@ -40,7 +40,7 @@ class LIDARSpeed:
         elif max_range > 0.6 and max_range < 1:
             new_speed = 0.1 #Hardcoded slow speed for close range.
         elif max_range > 1 and max_range < 30:
-            new_speed = np.log10(c)/1.5 #output range (0,1)
+            new_speed = .175 #Hardcoded slow speed for test mode.
         else:
             new_speed = 0
 

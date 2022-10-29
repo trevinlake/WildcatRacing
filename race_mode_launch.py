@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#! /usr/bin/env python
 import rospy
 import os
 import time
@@ -52,9 +52,9 @@ def get_launch():
                         "       Launch Modes       \n"+
                         "--------------------------")
     launch_menu_options = ("1. Race\n" +
-                          "2. Test\n" +
-                          "3. Keyboard Teleop\n" +
-                          "4. Exit The Program\n")
+                           "2. Test\n" +
+                           "3. Keyboard Teleop\n" +
+                           "4. Exit The Program\n")
     print(launch_menu_title)
     print(launch_menu_options)
     launch_option = input("Please Enter a number corresponding to the desired Launch Mode: ")
@@ -69,7 +69,7 @@ def launch_select(launch_option):
         switcher = {
             0: "gnome-terminal -x sh -c \"roslaunch wildcat_racing race.launch; bash\"",
             1: "gnome-terminal -x sh -c \"roslaunch wildcat_racing test.launch; bash\"",
-            2: "gnome-terminal -x sh -c \"roslaunch wildcat_racing teleop.launch\"",
+            2: "gnome-terminal -x sh -c \"roslaunch wildcat_racing teleop.launch; bash\"",
             3: "exit",
         }
 

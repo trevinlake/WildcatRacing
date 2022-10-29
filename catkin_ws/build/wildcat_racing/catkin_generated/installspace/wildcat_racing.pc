@@ -1,4 +1,4 @@
-prefix=/home/wildcatracing/catkin_ws/install
+prefix=/home/trevin/Documents/WildcatRacing/catkin_ws/install
 
 Name: wildcat_racing
 Description: Description of wildcat_racing

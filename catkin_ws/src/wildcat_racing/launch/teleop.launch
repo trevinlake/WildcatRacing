@@ -3,6 +3,4 @@
   <node name="teleop_to_steering" pkg="wildcat_racing" type="teleop_to_steering.py" output="screen"></node>
   <node name="teleop_to_driving" pkg="wildcat_racing" type="teleop_to_driving.py" output="screen"></node>
   <node name="urg_node" pkg="urg_node" type="urg_node" output="screen"></node>
-  <node name="lidar_to_steering" pkg="wildcat_racing" type="lidar_to_steering.py" output="screen"></node>
-  <node name="lidar_to_driving" pkg="wildcat_racing" type="lidar_to_driving.py" output="screen"></node> 
 </launch>

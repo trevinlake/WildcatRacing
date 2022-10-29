@@ -67,14 +67,14 @@ set(wildcat_racing_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(wildcat_racing_SOURCE_PREFIX /home/wildcatracing/catkin_ws/src/wildcat_racing)
-  set(wildcat_racing_DEVEL_PREFIX /home/wildcatracing/catkin_ws/devel)
+  set(wildcat_racing_SOURCE_PREFIX /home/trevin/Documents/WildcatRacing/catkin_ws/src/wildcat_racing)
+  set(wildcat_racing_DEVEL_PREFIX /home/trevin/Documents/WildcatRacing/catkin_ws/devel)
   set(wildcat_racing_INSTALL_PREFIX "")
   set(wildcat_racing_PREFIX ${wildcat_racing_DEVEL_PREFIX})
 else()
   set(wildcat_racing_SOURCE_PREFIX "")
   set(wildcat_racing_DEVEL_PREFIX "")
-  set(wildcat_racing_INSTALL_PREFIX /home/wildcatracing/catkin_ws/install)
+  set(wildcat_racing_INSTALL_PREFIX /home/trevin/Documents/WildcatRacing/catkin_ws/install)
   set(wildcat_racing_PREFIX ${wildcat_racing_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/wildcatracing/catkin_ws/install/lib;/home/wildcatracing/catkin_ws/devel/lib;/opt/ros/melodic/lib)
+    foreach(path /home/trevin/Documents/WildcatRacing/catkin_ws/install/lib;/home/trevin/Documents/WildcatRacing/catkin_ws/devel/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
