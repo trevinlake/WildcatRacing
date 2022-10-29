@@ -1,4 +1,5 @@
-#! /usr/bin/env python3
+#! /usr/bin/env python3.7
+# -*- coding: utf-8 -*-
 import rospy
 from std_msgs.msg import Empty
 from std_msgs.msg import Float64

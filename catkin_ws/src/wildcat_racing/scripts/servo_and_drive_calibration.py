@@ -1,5 +1,5 @@
-#! /usr/bin/env python3
-
+#! /usr/bin/env python3.7
+# -*- coding: utf-8 -*-
 from adafruit_servokit import ServoKit
 import numpy as np
 import time
