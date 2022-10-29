@@ -67,9 +67,9 @@ def launch_select(launch_option):
     # Switcher is dictionary data type here
     def numbers_to_launchmodes(argument):
         switcher = {
-            0: "gnome-terminal -x sh -c \"roslaunch wildcat_racing race.launch; bash\"",
-            1: "gnome-terminal -x sh -c \"roslaunch wildcat_racing test.launch; bash\"",
-            2: "gnome-terminal -x sh -c \"roslaunch wildcat_racing teleop.launch; bash\"",
+            0: "gnome-terminal -x sh -c \"roslaunch --wait wildcat_racing race.launch; bash\" && rosrun teleop_twist_keyboard teleop_twist_keyboard.py",
+            1: "gnome-terminal -x sh -c \"roslaunch --wait wildcat_racing test.launch; bash\" && rosrun teleop_twist_keyboard teleop_twist_keyboard.py",
+            2: "gnome-terminal -x sh -c \"roslaunch --wait wildcat_racing teleop.launch; bash\" && rosrun teleop_twist_keyboard teleop_twist_keyboard.py",
             3: "exit",
         }
 
@@ -94,7 +94,6 @@ def launch_select(launch_option):
             os.system(mode)
         else:
             kill_ros()
-            os.system("killall bash")
             time.sleep(1)
             exit()
 
@@ -106,8 +105,12 @@ def launch_select(launch_option):
         launch_select(launch_option)
 
 def kill_ros():
+        os.system("rosnode kill -a")
+        time.sleep(1)
         os.system("killall roscore")
         print("Command to kill roscore sent.")
+        time.sleep(1)
+        os.system("killall bash")
 
 #global boolean flag for whether this is the first run of main.
 app_first_run = True

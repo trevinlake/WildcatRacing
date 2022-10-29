@@ -7,7 +7,7 @@
 # new environment variables
 
 # modified environment variables
-export LD_LIBRARY_PATH='/opt/ros/melodic/lib'
-export PKG_CONFIG_PATH='/opt/ros/melodic/lib/pkgconfig'
+export CMAKE_PREFIX_PATH="/home/trevin/Documents/WildcatRacing/catkin_ws/devel:$CMAKE_PREFIX_PATH"
 export PWD='/home/trevin/Documents/WildcatRacing/catkin_ws/build'
-export ROS_PACKAGE_PATH='/home/trevin/Documents/WildcatRacing/catkin_ws/src:/opt/ros/melodic/share'
+export ROSLISP_PACKAGE_DIRECTORIES='/home/trevin/Documents/WildcatRacing/catkin_ws/devel/share/common-lisp'
+export ROS_PACKAGE_PATH="/home/trevin/Documents/WildcatRacing/catkin_ws/src:$ROS_PACKAGE_PATH"
