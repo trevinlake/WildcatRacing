@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 
 from adafruit_servokit import ServoKit
 import numpy as np

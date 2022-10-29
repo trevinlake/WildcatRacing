@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 import rospy
 from adafruit_servokit import ServoKit
 from std_msgs.msg import Float64
