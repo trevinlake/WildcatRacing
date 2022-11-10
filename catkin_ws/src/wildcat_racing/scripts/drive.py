@@ -23,8 +23,8 @@ class Drive:
         rospy.loginfo(rospy.get_caller_id() + "Latest teleop_speed was: %s\n", msg)
         new_speed = Float64()
         if msg != 0:
-            new_speed = msg
-            self.speed = msg
+            new_speed = msg.data
+            self.speed = msg.data
             kit.continuous_servo[2].throttle = new_speed
         else:
             self.speed = 0
@@ -34,7 +34,7 @@ class Drive:
         new_speed = Float32()
         #Priority is given to teleop since self.angle is only updated by teleop.
         if self.speed == 0:
-            new_speed = msg
+            new_speed = msg.data
             kit.continuous_servo[2].throttle = new_speed
 
 if __name__ == '__main__':
@@ -42,3 +42,4 @@ if __name__ == '__main__':
     rospy.init_node('drive')
     Drive()
     rospy.spin()
+

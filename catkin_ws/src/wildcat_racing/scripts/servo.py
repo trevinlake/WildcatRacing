@@ -24,8 +24,8 @@ class Servo:
         rospy.loginfo(rospy.get_caller_id() + "Latest teleop_angle was: %s\n", msg)
         new_angle = Float64()
         if msg != 0:
-            new_angle = msg
-            self.angle = msg
+            new_angle = round(msg.data)
+            self.angle = msg.data
             kit.servo[0].angle = new_angle
         else:
             self.angle = 0
@@ -35,7 +35,7 @@ class Servo:
         new_angle = Float32()
         #Priority is given to teleop since self.angle is only updated by teleop.
         if self.angle == 0:
-            new_angle = msg
+            new_angle = msg.data
             kit.servo[0].angle = new_angle
 
 if __name__ == '__main__':
@@ -43,3 +43,4 @@ if __name__ == '__main__':
     rospy.init_node('servo')
     Servo()
     rospy.spin()
+

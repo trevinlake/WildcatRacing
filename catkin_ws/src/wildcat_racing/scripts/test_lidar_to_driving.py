@@ -22,7 +22,7 @@ class LIDARSpeed:
         new_speed = Float32()
         ranges_arr = np.array(LaserScan.ranges)
         angle_count = 8
-        deg_arr = np.zeros(len(ranges_arr)/angle_count)
+        deg_arr = np.zeros(int(len(ranges_arr)/angle_count))
         #angle_count is how many ranges per degree of angle change.
         #average ranges per angle_count both for 'smoothing' sensor data and
         #for simplifying ranges indeces to coincide with integer degrees.
