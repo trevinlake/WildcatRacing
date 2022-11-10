@@ -19,10 +19,10 @@ class TeleopSpeed:
         linear_x = Twist.linear.x
         if linear_x == 0:
             #set speed to 0 AKA teleop killswitch
-            new_speed = 0
+            new_speed = -.4
         elif linear_x < 1.1789 and linear_x > 0.4549:
             #Output in range(0-1)
-            new_speed = 1.04920586872571*np.log(linear_x) + 0.827254089734171
+            new_speed = (1.04920586872571*np.log(linear_x) + 0.827254089734171)/3
         else:
             speed = 0
 
