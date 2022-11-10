@@ -37,7 +37,8 @@ class LIDARAngle:
 
         #The index of the maximum range will coincide with degree angle
         #in deg_arr.
-        new_angle = np.argmax(deg_arr)[0]
+        max_range_arr = np.argmax(deg_arr)[0]
+        new_angle = max_range_arr[0]
 
         self.angle = new_angle
         self.pub.publish(new_angle)

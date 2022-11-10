@@ -46,7 +46,7 @@ class LIDARSpeed:
         else:
             new_speed = 0
 
-        self.angle = new_speed
+        self.speed = new_speed
         self.pub.publish(new_speed)
 
 if __name__ == '__main__':
