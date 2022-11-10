@@ -30,7 +30,7 @@ class LIDARAngle:
         deg_sum = 0
         for i in range(45,225,angle_count): #Look at only the ranges within the semi circle.
             for j in range(angle_count):
-                deg_sum += ranges[i+j]
+                deg_sum += ranges_arr[i+j]
             deg_avg = deg_sum/angle_count
             deg_arr[i-45] = deg_avg #indeces 0-179
             deg_sum = 0
