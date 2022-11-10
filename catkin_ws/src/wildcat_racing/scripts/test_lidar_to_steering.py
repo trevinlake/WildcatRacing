@@ -21,8 +21,9 @@ class LIDARAngle:
         rospy.loginfo(rospy.get_caller_id() + "Latest LiDAR scan time was: %s\n", LaserScan.scan_time)
         new_angle = Float32()
         ranges_arr = np.array(LaserScan.ranges)
+        angle_count = 8
         deg_arr = np.zeros(len(ranges_arr)/angle_count)
-        angle_count = 8; #angle_count is how many ranges per degree of angle change.
+        #angle_count is how many ranges per degree of angle change.
         #average ranges per angle_count both for 'smoothing' sensor data and
         #for simplifying ranges indeces to coincide with integer degrees.
         deg_avg = 0
