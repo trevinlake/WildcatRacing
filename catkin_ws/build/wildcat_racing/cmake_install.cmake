@@ -1,8 +1,8 @@
-# Install script for directory: /home/trevin/Documents/WildcatRacing/catkin_ws/src/wildcat_racing
+# Install script for directory: /home/wildcatracing/WildcatRacing/catkin_ws/src/wildcat_racing
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/trevin/Documents/WildcatRacing/catkin_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/wildcatracing/WildcatRacing/catkin_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,17 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/trevin/Documents/WildcatRacing/catkin_ws/build/wildcat_racing/catkin_generated/installspace/wildcat_racing.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/wildcatracing/WildcatRacing/catkin_ws/build/wildcat_racing/catkin_generated/installspace/wildcat_racing.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/wildcat_racing/cmake" TYPE FILE FILES
-    "/home/trevin/Documents/WildcatRacing/catkin_ws/build/wildcat_racing/catkin_generated/installspace/wildcat_racingConfig.cmake"
-    "/home/trevin/Documents/WildcatRacing/catkin_ws/build/wildcat_racing/catkin_generated/installspace/wildcat_racingConfig-version.cmake"
+    "/home/wildcatracing/WildcatRacing/catkin_ws/build/wildcat_racing/catkin_generated/installspace/wildcat_racingConfig.cmake"
+    "/home/wildcatracing/WildcatRacing/catkin_ws/build/wildcat_racing/catkin_generated/installspace/wildcat_racingConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/wildcat_racing" TYPE FILE FILES "/home/trevin/Documents/WildcatRacing/catkin_ws/src/wildcat_racing/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/wildcat_racing" TYPE FILE FILES "/home/wildcatracing/WildcatRacing/catkin_ws/src/wildcat_racing/package.xml")
 endif()
 

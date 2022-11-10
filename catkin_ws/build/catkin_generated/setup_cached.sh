@@ -7,7 +7,7 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/trevin/Documents/WildcatRacing/catkin_ws/devel:$CMAKE_PREFIX_PATH"
-export PWD='/home/trevin/Documents/WildcatRacing/catkin_ws/build'
-export ROSLISP_PACKAGE_DIRECTORIES='/home/trevin/Documents/WildcatRacing/catkin_ws/devel/share/common-lisp'
-export ROS_PACKAGE_PATH="/home/trevin/Documents/WildcatRacing/catkin_ws/src:$ROS_PACKAGE_PATH"
+export CMAKE_PREFIX_PATH="/home/wildcatracing/WildcatRacing/catkin_ws/devel:$CMAKE_PREFIX_PATH"
+export PWD='/home/wildcatracing/WildcatRacing/catkin_ws/build'
+export ROSLISP_PACKAGE_DIRECTORIES='/home/wildcatracing/WildcatRacing/catkin_ws/devel/share/common-lisp'
+export ROS_PACKAGE_PATH="/home/wildcatracing/WildcatRacing/catkin_ws/src:$ROS_PACKAGE_PATH"
