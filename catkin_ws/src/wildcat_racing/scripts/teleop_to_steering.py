@@ -20,11 +20,11 @@ class TeleopAngle:
         if angular_z == 0:
             new_angle = 90
         elif angular_z < 0 and angular_z > -2.3579 and angular_z < -.91:
-        #use left_angle(output is in range (90,180])
-            new_angle = -94.4285281853136*np.log(angular_z) + 81
+        #use right_angle(output is in range (0,90])
+            new_angle = -94.4285281853136*np.log(-1*angular_z) + 81
         elif angular_z > .91 and angular_z < 2.3579:
-        #use right_angle(output is in range [0,90))
-            new_angle = 94.4285281853136*np.log(-1*angular_z) + 99
+        #use right_angle(output is in range [90,180))
+            new_angle = 94.4285281853136*np.log(angular_z) + 99
         else:
             new_angle = 90
 
