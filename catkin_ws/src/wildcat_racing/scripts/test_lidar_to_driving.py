@@ -28,7 +28,7 @@ class LIDARSpeed:
         #for simplifying ranges indeces to coincide with integer degrees.
         deg_avg = 0
         deg_sum = 0
-        for i in range(45,225,angle_count): #Look at only the ranges within the semi circle.
+        for i in range(90,180): #Look at only the ranges within the semi circle.
             for j in range(angle_count):
                 deg_sum += ranges_arr[i+j]
             deg_avg = deg_sum/angle_count #Average range within a degree of 8 measurements.
@@ -36,13 +36,15 @@ class LIDARSpeed:
             deg_sum = 0
 
         auto_brake_arr = np.extract(deg_arr < 0.6, deg_arr)
+        auto_brake_arr = np.max(auto_brake_arr)
         max_range = np.max(deg_arr)
-        if len(auto_brake_arr) > 0:
-            new_speed = 0
-        elif max_range > 0.6 and max_range < 1:
+
+        if auto_brake_arr > 0:
+            new_speed = -.3
+        elif max_range > 0.4 and max_range < 1:
             new_speed = 0.1 #Hardcoded slow speed for close range.
         elif max_range > 1 and max_range < 30:
-            new_speed = np.log10(max_range)/1.5 #output range (0,1)
+            new_speed = (4*np.log(max_range))/35 #output range (0,1)
         else:
             new_speed = 0
 
@@ -55,3 +57,4 @@ if __name__ == '__main__':
     rate = rospy.Rate(30) # 30Hz, max for our LIDAR is 40Hz
     LIDARSpeed()
     rospy.spin()
+
