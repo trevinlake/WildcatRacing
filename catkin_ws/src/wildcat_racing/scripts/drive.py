@@ -22,7 +22,7 @@ class Drive:
     def teleop_callback(self, msg):
         rospy.loginfo(rospy.get_caller_id() + "Latest teleop_speed was: %s\n", msg)
         new_speed = Float64()
-        if msg.data != 0:
+        if msg != 0:
             new_speed = msg.data
             self.speed = msg.data
             kit.continuous_servo[2].throttle = new_speed
@@ -42,4 +42,3 @@ if __name__ == '__main__':
     rospy.init_node('drive')
     Drive()
     rospy.spin()
-

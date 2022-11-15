@@ -22,29 +22,25 @@ class LIDARSpeed:
         new_speed = Float32()
         ranges_arr = np.array(LaserScan.ranges)
         angle_count = 8
-        deg_arr = np.zeros(int(len(ranges_arr)/angle_count))
+        deg_arr = np.zeros(240)
         #angle_count is how many ranges per degree of angle change.
         #average ranges per angle_count both for 'smoothing' sensor data and
         #for simplifying ranges indeces to coincide with integer degrees.
         deg_avg = 0
         deg_sum = 0
-        for i in range(90,180): #Look at only the ranges within the semi circle.
-            for j in range(angle_count):
-                deg_sum += ranges_arr[i+j]
-            deg_avg = deg_sum/angle_count #Average range within a degree of 8 measurements.
-            deg_arr[i-45] = deg_avg #indeces 0-179
-            deg_sum = 0
+        for i in range(960,1200): #Look at only the ranges within the semi circle.
+            #deg_sum += ranges_arr[i]
+            #deg_avg = deg_sum/angle_count #Average range within a degree of 8 measurements.
+            deg_arr[i-960] = ranges_arr[i] #indeces 0-179
+            #deg_sum = 0
 
-        auto_brake_arr = np.extract(deg_arr < 0.6, deg_arr)
-        auto_brake_arr = np.max(auto_brake_arr)
-        max_range = np.max(deg_arr)
+        auto_brake_arr = np.extract(deg_arr < 1, deg_arr)
+        max_range = max(deg_arr)
 
-        if auto_brake_arr > 0:
+        if len(auto_brake_arr) > 0:
             new_speed = -.3
-        elif max_range > 0.4 and max_range < 1:
-            new_speed = 0.1 #Hardcoded slow speed for close range.
         elif max_range > 1 and max_range < 30:
-            new_speed = (4*np.log(max_range))/35 #output range (0,1)
+            new_speed = 0.05 #Hardcoded slow speed for close range.
         else:
             new_speed = 0
 

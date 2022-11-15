@@ -25,7 +25,7 @@ class Servo:
         new_angle = Float64()
         if msg != 0:
             new_angle = round(msg.data)
-            self.angle = msg.data
+            self.angle = msg
             kit.servo[0].angle = new_angle
         else:
             self.angle = 0

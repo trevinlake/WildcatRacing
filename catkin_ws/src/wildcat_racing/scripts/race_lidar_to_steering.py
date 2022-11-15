@@ -37,8 +37,11 @@ class LIDARAngle:
 
         #The index of the maximum range will coincide with degree angle
         #in deg_arr.
-        max_range_arr = np.argmax(deg_arr)[0]
-        new_angle = max_range_arr[0]
+        max_range_arr = np.argmax(deg_arr)
+		try:
+            new_angle = max_range_arr
+        except:
+	    	new_angle = max_range_arr[0]
 
         self.angle = new_angle
         self.pub.publish(new_angle)
@@ -49,3 +52,4 @@ if __name__ == '__main__':
     rate = rospy.Rate(30) # 30Hz, max for our LIDAR is 40Hz
     LIDARAngle()
     rospy.spin()
+
