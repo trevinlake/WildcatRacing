@@ -22,25 +22,25 @@ class LIDARSpeed:
         new_speed = Float32()
         ranges_arr = np.array(LaserScan.ranges)
         angle_count = 8
-        deg_arr = np.zeros(240)
+        deg_arr = np.zeros(32)
         #angle_count is how many ranges per degree of angle change.
         #average ranges per angle_count both for 'smoothing' sensor data and
         #for simplifying ranges indeces to coincide with integer degrees.
         deg_avg = 0
         deg_sum = 0
-        for i in range(960,1200): #Look at only the ranges within the semi circle.
+        for i in range(1064,1096): #Look at only the ranges within the range specified.
             #deg_sum += ranges_arr[i]
             #deg_avg = deg_sum/angle_count #Average range within a degree of 8 measurements.
-            deg_arr[i-960] = ranges_arr[i] #indeces 0-179
+            deg_arr[i-1064] = ranges_arr[i] #indeces 0-179
             #deg_sum = 0
 
-        auto_brake_arr = np.extract(deg_arr < 1, deg_arr)
+        auto_brake_arr = np.extract(deg_arr < 1.5, deg_arr)
         max_range = max(deg_arr)
 
         if len(auto_brake_arr) > 0:
-            new_speed = -.3
-        elif max_range > 1 and max_range < 30:
-            new_speed = 0.05 #Hardcoded slow speed for close range.
+            new_speed = -.6
+        elif max_range > 1:
+            new_speed = 0.06 #Hardcoded slow speed for close range.
         else:
             new_speed = 0
 
@@ -50,7 +50,7 @@ class LIDARSpeed:
 if __name__ == '__main__':
     print("Running lidar_to_driving node.")
     rospy.init_node('lidar_to_driving')
-    rate = rospy.Rate(30) # 30Hz, max for our LIDAR is 40Hz
+    rate = rospy.Rate(40) # 30Hz, max for our LIDAR is 40Hz
     LIDARSpeed()
     rospy.spin()
 

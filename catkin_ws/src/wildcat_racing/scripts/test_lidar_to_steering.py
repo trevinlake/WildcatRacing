@@ -56,14 +56,19 @@ class LIDARAngle:
                 new_angle = 90
             elif right_left_range_diff < 0: #turn left
                 new_angle = (int((right_min_range_index + 360 + 720)/8)-45) #output(90,165)
-                new_angle = ((new_angle - 90)*1.2) + 90
+                new_angle = ((new_angle - 90)*1.5) + 90
                 print(str(right_min_range_index))
             elif right_left_range_diff > 0: #turn right
                 print(str(left_min_range_index))
                 new_angle = (int(((left_min_range_index + 1200 + 720)/8)-225)) #output(15,90)
-                new_angle = ((new_angle - 90)*1.2) + 90
+                new_angle = ((new_angle - 90)*1.5) + 90
             else:
                 new_angle = 90
+
+            if new_angle > 180:
+                new_angle = 180
+            if new_angle < 0:
+                new_angle = 0
 
         except: #for multiple minimum indeces, choose first minimum index
             right_min_range_index = np.argmin(right_deg_arr)[0]
@@ -79,15 +84,19 @@ class LIDARAngle:
                 new_angle = 90
             elif right_left_range_diff < 0: #turn left
                 new_angle = (int((right_min_range_index + 360 + 720)/8)-45) #output(90,165)
-                new_angle = ((new_angle - 90)*1.2) + 90
+                new_angle = ((new_angle - 90)*1.5) + 90
                 print(str(right_min_range_index))
             elif right_left_range_diff > 0: #turn right
                 print(str(left_min_range_index))
                 new_angle = (int(((left_min_range_index + 1200 + 720)/8)-225)) #output(15,90)
-                new_angle = ((new_angle - 90)*1.2) + 90
+                new_angle = ((new_angle - 90)*1.5) + 90
             else:
                 new_angle = 90
 
+            if new_angle > 180:
+                new_angle = 180
+            if new_angle < 0:
+                new_angle = 0
 
         self.angle = new_angle
         self.pub.publish(new_angle)

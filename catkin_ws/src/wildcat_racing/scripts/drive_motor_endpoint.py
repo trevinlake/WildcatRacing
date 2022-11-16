@@ -8,8 +8,8 @@ kit = ServoKit(channels=16)
 command = ""
 while command != "end":
     command = input("enter speed:")
-    
-    kit.continuous_servo[2].throttle = float(command)
+    try:
+    	kit.continuous_servo[2].throttle = float(command)
     except:
         command = "end"
 
