@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to WildcatRacing's documentation!
+Wildcat Racing
 =========================================
 
 .. toctree::
@@ -11,12 +11,5 @@ Welcome to WildcatRacing's documentation!
    :caption: Contents:
    lidar
 
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
 
 WildcatRacing has its documentation hosted on Read the Docs.
