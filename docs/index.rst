@@ -13,22 +13,20 @@ Welcome to Wildcat Racing! Here you will find documentation for Weber State Univ
 
 .. toctree::
    :maxdepth: 2
-   :caption: Sensors
-
-   lidar
-   imu
-   hall_effect
-
-
-
-.. toctree::
-   :maxdepth: 2
    :caption: Software
    
    architecture
    ros_code
    launcher_gui
    other_scripts
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Sensors
+
+   lidar
+   imu
+   hall_effect
    
 .. toctree::
    :maxdepth: 2
