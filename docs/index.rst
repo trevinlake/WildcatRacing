@@ -9,7 +9,7 @@ Wildcat Racing
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
-   lidar
+   sensors
 
 
 WildcatRacing has its documentation hosted on Read the Docs.
