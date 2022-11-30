@@ -9,7 +9,7 @@ Welcome to WildcatRacing's documentation!
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
-
+   lidar
 
 
 Indices and tables
