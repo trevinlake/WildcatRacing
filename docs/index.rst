@@ -2,15 +2,39 @@
    sphinx-quickstart on Wed Nov 30 09:05:10 2022.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
-
+   
 Wildcat Racing
 =========================================
 
+Welcome to Wildcat Racing! Here you will find documentation for Weber State University's F1Tenth 2022 Race Team.
+
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Sensors
+
+   lidar
+   imu
+   hall_effect
+
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Software
    
-   sensors
+   architecture
+   ros_code
+   launcher_gui
+   other_scripts
+   
+.. toctree::
+   :maxdepth: 2
+   :caption: Hardware
+   
+   bom
+   schematics
+   
+   
+   
 
-
-WildcatRacing has its documentation hosted on Read the Docs.
+   
