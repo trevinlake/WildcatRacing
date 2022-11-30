@@ -7,7 +7,9 @@ Wildcat Racing
 =========================================
 
 Welcome to Wildcat Racing! Here you will find documentation for Weber State University's F1Tenth 2022 Race Team.
-
+.. image:: images/wildcat_racing_retro.png
+   :width: 600
+   
 .. toctree::
    :caption: Table of Contents
 
