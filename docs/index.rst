@@ -10,6 +10,11 @@ Welcome to Wildcat Racing! Here you will find documentation for Weber State Univ
 
 .. image:: images/wildcat_racing_retro.png
    :width: 600
+
+.. toctree::
+   :hidden:
+
+    self   
    
 .. toctree::
    :caption: Table of Contents
