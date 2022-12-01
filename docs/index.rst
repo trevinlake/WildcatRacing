@@ -42,6 +42,8 @@ Welcome to Wildcat Racing! Here you will find documentation for Weber State Univ
    
    bom
    schematics
+   datasheets
+   3d_prints
    
 .. toctree::
     :caption: Links
