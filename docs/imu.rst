@@ -1,2 +1,3 @@
-  IMU
+  Intertial Measurement Unit
   ==============================================
+
