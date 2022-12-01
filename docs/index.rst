@@ -38,6 +38,13 @@ Welcome to Wildcat Racing! Here you will find documentation for Weber State Univ
    bom
    schematics
    
+.. toctree::
+    :caption: Links
+
+    Weber State University Electrical and Computer Engineering <https://weber.edu/ece>
+    F1Tenth <https://f1tenth.org>
+    Code Repository <https://github.com/trevinlake/WildcatRacing>
+    Discord <https://discord.gg/KXRFZF949C>
    
    
 
