@@ -1,3 +1,3 @@
 # WildcatRacing
 This repository has documentation on readthedocs.
-[WildcatRacing](wildcatracing.rtfd.io)
+<a href="https://wildcatracing.rtfd.io" target="_blank">WildcatRacing</a>
