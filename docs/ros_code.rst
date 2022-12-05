@@ -11,7 +11,7 @@ ROS Node Example - Steering Servo Subscriber Node
 ________________________
 .. code-block:: python
 :linenos:
-:emphasize-lines: 1,9-10,12,19-21,23,29,33,39
+:emphasize-lines: 1,9-10,12,19-21,23,28-29,33,37,39
 
   #! /usr/bin/env python3.7
   # -*- coding: utf-8 -*-
@@ -59,3 +59,4 @@ ________________________
       Servo()
       rospy.spin()
 
+Line 1 is the "shebang" which tells the Python interpreter which version of Python should be used to run the code. In Lines 9-10, we use the adafruit_servokit library to create a servo controller object that has 16 channels. This how the PCA9685 Servo Driver board is integrated in software. Line 12 is where we create a Servo class. We decided to make all Python ROS Nodes using object oriented architecture since Python's implementation of ROS in scripted architecture requires some 'tricks' and global variables to access and pass the variables even within the same Node. Lines 20-21 are where we tell this node to subscribe to both /teleop_angle and /lidar_angle topics. Line 23 is the teleop callback function which is called any time new data shows up on the /teleop_angle topic. In line 28, we can see that if a teleop message is not 0, we assign the nodes 'angle' attribute to be the value of the message. Then in line 29, we send the new angle to the steering servo over the PCA9685 control board at channel 0 using PWM via I2C protocol. Line 33 is the lidar callback function which is called every time new data appears on the /lidar_angle topic. Line 37 shows how we give priority to teleop since we are using teleop as an emergency override to stop autonomous driving using keyboard controls.
