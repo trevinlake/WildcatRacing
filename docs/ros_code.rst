@@ -7,6 +7,8 @@ ________________________
   :width: 800
   :alt: Alternative text
 
+The above image is a graph of all ROS Nodes used within our vehicle and how they relate to each other. This RQT Graph should be referenced as the code below is examined.
+
 ROS Node Data Characterization Example - Lidar to Steering Subscriber/Publisher Node
 ________________________
 .. code-block:: python
