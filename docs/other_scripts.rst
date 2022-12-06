@@ -6,7 +6,7 @@ _____________________
 
 This refers to a state that the Electronic Speed Controller gets stuck in a mode where it waits for calibration input from a remote controller. This is due to it being traditionally used in an RC setting. Since our vehicle does not utilize that funcionality, we wrote a script to send data directly to the ESC to knock it out of this calibration mode before launching our race modes.
 
-.. code-insert:: python
+.. code-block:: python
   :linenos:
   
     #! /usr/bin/env python3.7
@@ -103,7 +103,7 @@ real_time_hall_effect.py
 ____________________________
 This code is the real-time graphing of the suspension sensor data using matplotlib's animate function.
 
-.. code-insert:: python
+.. code-block:: python
   :linenos:
   
     #!/usr/bin/env python3.7
@@ -259,7 +259,7 @@ real_time_IMU.py
 _____________________________
 This code is the self-written driver code for accessing data stored on the ADIS16470 IMU's registers. Note: The baud rate is likely incorrect as we could not readily find the proper one to use.
 
-.. code-insert:: python
+.. code-block:: python
   :linenos:
   
     #!/usr/bin/env python3.7
@@ -373,7 +373,7 @@ lidar_ethernet_setup.py
 ________________________
 This code configure's the Jetson Nano's Ethernet port for the Lidar data rather than being used for network information.
 
-.. code-insert:: python
+.. code-block:: python
   :linenos:
   
     #! /usr/bin/env python3.7
