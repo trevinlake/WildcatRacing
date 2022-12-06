@@ -33,7 +33,7 @@ Welcome to Wildcat Racing! Here you will find documentation for Weber State Univ
    :caption: Sensors
 
    lidar
-   imu
+   inertial_measurement_unit
    hall_effect
    
 .. toctree::
