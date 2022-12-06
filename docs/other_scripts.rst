@@ -31,7 +31,7 @@ ___________________________
 
 This code was used to initially interface with the servo and drive motor directly rather than through a ROS node. It was used to iterate through and identify values which we could use to properly set the steering servo PWM pulse width to make the full range 0-180 degrees match the full range of steering where 0 degrees is a full right turn and 180 degrees is a full left turn and 90 degrees is straight ahead. The drive motor is treated as a continuous servo with values ranging from -1,1 where 0 is full coast, -1 is full brake, and 1 is full throttle. 
 
-.. code-insert:: python
+.. code-block:: python
   :linenos:
   
     #! /usr/bin/env python3.7
